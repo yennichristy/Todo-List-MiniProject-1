@@ -1,0 +1,122 @@
+@import "../styles/mixins/mixcontainer";
+@import "../styles/mixins/mixcontents";
+
+.dashbigcon {
+  @include bigcon;
+}
+.dashtop {
+  @include fonts;
+  height: 3.7rem;
+  display: flex;
+  flex-flow: row;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #4c9188;
+  &__left {
+    margin-left: 2rem;
+  }
+  &__right {
+    margin-right: 2rem;
+  }
+}
+.dashtop__right {
+  background-color: transparent;
+  border: none;
+  font-family: "Open Sans";
+  color: white;
+  font-weight: bold;
+  font-size: 1rem;
+}
+.dashbottom {
+  display: flex;
+  background-color: #c3ddda;
+  height: 54rem;
+}
+.dashbottom_left {
+  background-color: #4c9188;
+  width: 20rem;
+  @include fonts;
+}
+.propic {
+  border-radius: 8rem;
+  width: 10rem;
+  height: 10rem;
+  margin-top: 3rem;
+  margin-bottom: -2rem;
+}
+.dashbottom_right {
+  width: 60rem;
+  @include fonts;
+  color: black;
+}
+.dashbottom .buttons {
+  margin-top: -1rem;
+  margin-right: 3rem;
+  display: flex;
+  justify-content: flex-end;
+}
+.add {
+  @include dashbtn;
+}
+.edit {
+  @include dashbtn;
+}
+.tasker {
+  display: flex;
+  flex-flow: row;
+}
+.tasker_left {
+  width: 30rem;
+  flex-flow: row;
+  text-align: left;
+  margin-left: 3.5rem;
+}
+.text {
+  display: flex;
+  flex-flow: row;
+  justify-content: space-between;
+}
+.text-1 {
+  margin-left: 6rem;
+}
+.text-2 {
+  margin-left: 20rem;
+}
+.check {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+.title {
+  width: 20rem;
+  height: 2rem;
+  border: none;
+  margin-top: -1.7rem;
+  margin-left: 2.5rem;
+  font-size: 1rem;
+}
+.tasker_right {
+  display: flex;
+}
+.tasklist {
+  background-color: white;
+  width: 50rem;
+  padding: 0.8rem;
+  box-shadow: 0.2rem 0.2rem #b9c7c5;
+}
+.icons {
+  display: flex;
+  flex-flow: row;
+  justify-content: flex-start;
+  margin-top: -3.5rem;
+  margin-left: 31rem;
+}
+.star {
+  margin-right: 5rem;
+}
+.editt {
+  margin-right: 2rem;
+  margin-left: 7rem;
+}
+.trash {
+  margin-left: rem;
+}

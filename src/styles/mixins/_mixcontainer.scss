@@ -1,0 +1,23 @@
+@mixin bigcon {
+  display: block;
+  box-sizing: border-box;
+  max-width: 80rem;
+  max-height: 56rem;
+  margin-left: 18rem;
+}
+
+@mixin conleft {
+  float: left;
+  background-color: #4c9188;
+  position: absolute;
+  width: 35rem;
+  height: 56rem;
+}
+
+@mixin conright {
+  margin-left: 35rem;
+  background-color: #f5f5f5;
+  width: 45rem;
+  height: 56rem;
+  position: absolute;
+}

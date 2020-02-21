@@ -1,13 +1,16 @@
 {
-  "name": "miniproject-yenni",
+  "name": "TodoList-MiniProject",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.3.2",
     "@testing-library/user-event": "^7.1.2",
+    "font-awesome": "^4.7.0",
+    "node-sass": "^4.13.1",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
+    "react-router-dom": "^5.1.2",
     "react-scripts": "3.3.1"
   },
   "scripts": {
@@ -30,5 +33,9 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  }
+  },
+  "description": "MiniProject TodoList February 2020, Group Member:Firbert, Jason, Hakim, Rendra, Yenni",
+  "main": "index.js",
+  "author": "Yenni",
+  "license": "MIT"
 }

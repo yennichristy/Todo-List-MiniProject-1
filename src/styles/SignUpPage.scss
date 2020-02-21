@@ -1,0 +1,72 @@
+@import "../styles/mixins/mixcontainer";
+@import "../styles/mixins/mixcontents";
+
+.bigcontainer {
+  @include bigcon;
+}
+.containerleft {
+  @include conleft;
+}
+.containerleft h6 {
+  @include fonts;
+  @include todos;
+}
+.leftcontent {
+  @include fonts;
+  margin-top: 230px;
+  line-height: 1.7;
+}
+.leftcontent h3 {
+  font-size: 60px;
+  margin-bottom: 20px;
+}
+.btnsign {
+  @include btnleft;
+}
+.containerright {
+  @include conright;
+}
+.rightcontent {
+  margin-top: 200px;
+  text-align: center;
+  font-size: 20px;
+  color: #c4c4c4;
+  font-family: "Open Sans";
+}
+.rightcontent h2 {
+  @include fontblue;
+  font-size: 40px;
+}
+.containersosmed {
+  margin-left: -30px;
+  margin-top: -30px;
+}
+.sosmed {
+  display: inline-flex;
+  &--f {
+    @include sosmed;
+    padding: 15px 25px;
+  }
+  &--g {
+    @include sosmed;
+    padding: 15px;
+  }
+  &--in {
+    @include sosmed;
+    padding: 15px 20px;
+  }
+}
+.data {
+  &--name {
+    @include data;
+  }
+  &--email {
+    @include data;
+  }
+  &--pass {
+    @include data;
+  }
+}
+.signup {
+  @include btnright;
+}

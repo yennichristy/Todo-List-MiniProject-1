@@ -1,0 +1,77 @@
+@import "../styles/mixins/mixcontainer";
+@import "../styles/mixins/mixcontents";
+
+.bigcon {
+  position: absolute;
+  z-index: 10;
+  @include bigcon;
+}
+
+.newcon {
+  width: 30rem;
+  height: 30rem;
+  background-color: #c3ddda;
+  border: #4c9188;
+  border-width: 0.2rem;
+  border-style: solid;
+  border-radius: 3rem;
+  margin-top: 5rem;
+  margin-left: 25%;
+  padding: 3rem;
+}
+
+.exit {
+  display: flex;
+  justify-content: flex-end;
+  &--btn {
+    background-color: #4c9188;
+    border: none;
+    border-radius: 3rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    padding-bottom: 0.5rem;
+    padding-top: 0.5rem;
+    color: white;
+    font-weight: bold;
+    font-size: 1rem;
+    margin-right: -0.2rem;
+    margin-top: -1rem;
+  }
+}
+.taskform {
+  @include fonts;
+  color: #4c9188;
+  font-weight: bold;
+  text-align: left;
+  &--title {
+    margin-bottom: 0.1rem;
+  }
+}
+.titlearea {
+  margin-bottom: 0.2rem;
+}
+.areas {
+  width: 30rem;
+  height: 2rem;
+}
+.descarea {
+  width: 30rem;
+  height: 8rem;
+}
+.areadate {
+  height: 2rem;
+}
+.submit {
+  display: flex;
+  justify-content: flex-end;
+  &--btn {
+    background-color: #4c9188;
+    border: none;
+    margin-top: 2rem;
+    color: white;
+    font-weight: bold;
+    padding: 1rem;
+    border-radius: 1rem;
+    font-size: 1rem;
+  }
+}
