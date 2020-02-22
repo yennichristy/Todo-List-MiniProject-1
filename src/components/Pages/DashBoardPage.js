@@ -2,22 +2,26 @@ import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import "../../styles/DashBoard.scss";
 import picts from "../../pictures/sunflower.jpeg";
-import AddModal from "../AddModal";
+import AddModal from "../Modals/AddModal";
+import EditModal from "../Modals/EditModal";
 // import { getAllTodos, deleteTodo, postNewTodos } from "../helpers/crudTodos";
 
 const DashBoardPage = () => {
   let baseUrl = "https://miniprojectc.herokuapp.com/api/v1";
   const [checkBox, setCheckBox] = useState(false);
   const [modalOpen, setModalOpen] = useState(false);
+  const [modalEdit, setModalEdit] = useState(false);
   const [todos, setTodos] = useState([]);
   const [post, setPost] = useState({
     name: "",
-    description: ""
+    description: "",
+    dueDate: ""
   });
   const [complete, setComplete] = useState({
     id: "",
-    completion: null
+    completion: false
   });
+  const [dataId, setDataId] = useState(null);
 
   const change = () => {
     setCheckBox({
@@ -32,6 +36,7 @@ const DashBoardPage = () => {
     });
   };
 
+  // modal add ---------------------------------------------------------------------------------------------------------------------------------------------
   const openModal = () => {
     setModalOpen(true);
   };
@@ -40,14 +45,22 @@ const DashBoardPage = () => {
     setModalOpen(false);
   };
 
-  //get data by id
-  // data masukkan ke form edit -> insert to data edit form
+  // modal edit -------------------------------------------------------------------------------------------------------------------------------------------
+
+  const openEdit = () => {
+    setModalEdit(true);
+  };
+
+  const closeEdit = () => {
+    setModalEdit(false);
+  };
 
   const getId = async id => {
+    console.log(id);
     let token = localStorage.getItem("token");
 
     try {
-      const getIdRes = await fetch(`${baseUrl}/tasks/id`, {
+      const getIdRes = await fetch(`${baseUrl}/tasks/id?id=${id}`, {
         method: "GET",
         headers: {
           "Content-Type": "application/json",
@@ -56,7 +69,8 @@ const DashBoardPage = () => {
         }
       });
       const dataGetId = await getIdRes.json();
-      console.log(dataGetId);
+      setDataId(dataGetId.data);
+      openModal();
     } catch (error) {
       console.log(error);
     }
@@ -166,7 +180,7 @@ const DashBoardPage = () => {
           <i className="fa far fa-star"></i>
         </div>
         <div className="editt">
-          <i className="fa fas fa-edit" onClick={() => getId(item._id)}></i>
+          <i className="fa fas fa-edit" onClick={openEdit}></i>
         </div>
         <div className="trash">
           <i
@@ -174,6 +188,48 @@ const DashBoardPage = () => {
             onClick={() => deleteTodo(item._id)}
           ></i>
         </div>
+        {/* {false ? "mucul" : "gak muncul"} */}
+        {/* ini edit modal ----------------------------------------------------------------------------------------------------------------------------------- */}
+        <EditModal edit={modalEdit}>
+          <div className="bigcon">
+            <div>
+              <div className="newcon">
+                <div>
+                  <form className="taskform" onSubmit={postNewTodos}>
+                    <p className="taskform--title">Title:</p>
+                    <input
+                      className="areas"
+                      type="text"
+                      name="name"
+                      value={dataId && dataId.name}
+                      onChange={changePost}
+                    />
+                    <p className="titlearea">Description:</p>
+                    <input
+                      className="descarea"
+                      type="text"
+                      name="description"
+                      value={dataId && dataId.description}
+                      onChange={changePost}
+                    />
+                    <p className="taskform--title">Due date:</p>
+                    <input
+                      className="areadate"
+                      type="date"
+                      name="dueDate"
+                      value={dataId && dataId.dueDate}
+                      onChange={changePost}
+                    />
+                    <div className="submit">
+                      <button onClick={closeEdit}>Cancel</button>
+                      <button onClick={closeEdit}>Save Changes</button>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </EditModal>
       </div>
     </div>
   ));
@@ -184,6 +240,7 @@ const DashBoardPage = () => {
 
   return (
     <div className="dashbigcon">
+      {/* ini add modal ----------------------------------------------------------------------------------------------------------------------------------- */}
       <AddModal isOpen={modalOpen}>
         <div className="bigcon">
           <div>
@@ -228,6 +285,7 @@ const DashBoardPage = () => {
           </div>
         </div>
       </AddModal>
+
       <div className="dashcon">
         <div className="dashtop">
           <h6 className="dashtop__left">Todos</h6>

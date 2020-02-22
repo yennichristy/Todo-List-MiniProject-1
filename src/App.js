@@ -4,6 +4,7 @@ import SignUpPage from "../src/components/Pages/SignUpPage";
 import SignInPage from "../src/components/Pages/SignInPage";
 import DashBoardPage from "../src/components/Pages/DashBoardPage";
 import NewTask from "./components/NewTask";
+import EditBoard from "./components/Pages/EditBoard";
 
 const App = () => {
   // const token = localStorage.token;
@@ -21,6 +22,9 @@ const App = () => {
       </Route>
       <Route path="/newtask" exact>
         <NewTask />
+      </Route>
+      <Route path="/edittask" exact>
+        <EditBoard />
       </Route>
     </BrowserRouter>
   );
