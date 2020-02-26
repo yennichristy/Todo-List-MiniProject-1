@@ -35,7 +35,7 @@ const SignInPage = () => {
         }
       );
       const data = await response.json();
-      console.log("tok", data);
+      console.log("token", data);
       if (data.data) {
         localStorage.setItem("token", data.data);
         history.push("/dashboard");
