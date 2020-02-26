@@ -3,7 +3,6 @@
 
 .bigcon {
   position: absolute;
-  z-index: 10;
   @include bigcon;
 }
 
@@ -18,6 +17,7 @@
   margin-top: 5rem;
   margin-left: 25%;
   padding: 3rem;
+  opacity: 1;
 }
 
 .exit {

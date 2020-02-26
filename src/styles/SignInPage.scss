@@ -22,6 +22,10 @@
 }
 .btnsign {
   @include btnleft;
+  cursor: pointer;
+}
+.btnsign:hover {
+  background-color: #88c2ba;
 }
 .incontainerright {
   @include conright;
@@ -68,4 +72,8 @@
 }
 .signin {
   @include btnright;
+  cursor: pointer;
+}
+.signin:hover {
+  background-color: #88c2ba;
 }
