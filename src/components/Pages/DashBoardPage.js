@@ -8,7 +8,6 @@ import DatePicker from "react-date-picker";
 
 const DashBoardPage = () => {
   let baseUrl = "https://miniprojectc.herokuapp.com/api/v1";
-  const [checkBox, setCheckBox] = useState(false);
   const [modalOpen, setModalOpen] = useState(false);
   const [modalEdit, setModalEdit] = useState(false);
   const [todos, setTodos] = useState([]);
@@ -30,12 +29,6 @@ const DashBoardPage = () => {
     setDataId({
       ...dataId,
       [e.target.name]: e.target.value
-    });
-  };
-
-  const updateComplete = async id => {
-    setCheckBox({
-      checkBox: !checkBox
     });
   };
 
@@ -338,7 +331,7 @@ const DashBoardPage = () => {
         className="check"
         type="checkbox"
         name="checkMe"
-        value={checkBox}
+        value={false}
         onChange={
           item.completion ? () => delCom(item.id) : () => postCom(item.id)
         }
@@ -370,7 +363,7 @@ const DashBoardPage = () => {
 
   useEffect(() => {
     getAllTodos();
-  }, []);
+  });
 
   return (
     <div className="dashbigcon">
