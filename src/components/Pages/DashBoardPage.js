@@ -356,14 +356,14 @@ const DashBoardPage = () => {
             onClick={() => deleteTodo(item._id)}
           ></i>
         </div>
-        {/* {false ? "mucul" : "gak muncul"} */}
+        {/* {false ? "muncul" : "gak muncul"} */}
       </div>
     </div>
   ));
 
   useEffect(() => {
     getAllTodos();
-  });
+  }, []);
 
   return (
     <div className="dashbigcon">
